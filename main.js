@@ -9,70 +9,70 @@ const uploadFile = document.getElementById('upload-file');
 const revertBtn = document.getElementById('revert-btn');
 
 // Add Filters & Effects
-document.addEventListener('click', (e) => {
+document.addEventListener('click', e => {
   if (e.target.classList.contains('filter-btn')) {
     if (e.target.classList.contains('brightness-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.brightness(5).render();
       });
     } else if (e.target.classList.contains('brightness-remove')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.brightness(-5).render();
       });
     } else if (e.target.classList.contains('contrast-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.contrast(5).render();
       });
     } else if (e.target.classList.contains('contrast-remove')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.contrast(-5).render();
       });
     } else if (e.target.classList.contains('saturation-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.saturation(5).render();
       });
     } else if (e.target.classList.contains('saturation-remove')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.saturation(-5).render();
       });
     } else if (e.target.classList.contains('vibrance-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.vibrance(5).render();
       });
     } else if (e.target.classList.contains('vibrance-remove')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.vibrance(-5).render();
       });
     } else if (e.target.classList.contains('vintage-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.vintage().render();
       });
     } else if (e.target.classList.contains('lomo-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.lomo().render();
       });
     } else if (e.target.classList.contains('clarity-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.clarity().render();
       });
     } else if (e.target.classList.contains('sincity-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.sinCity().render();
       });
     } else if (e.target.classList.contains('crossprocess-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.crossProcess().render();
       });
     } else if (e.target.classList.contains('pinhole-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.pinhole().render();
       });
     } else if (e.target.classList.contains('nostalgia-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.nostalgia().render();
       });
     } else if (e.target.classList.contains('hermajesty-add')) {
-      Caman('#canvas', img, function() {
+      Caman('#canvas', img, function () {
         this.herMajesty().render();
       });
     }
@@ -80,14 +80,14 @@ document.addEventListener('click', (e) => {
 });
 
 // Revert Filter
-revertBtn.addEventListener('click', (e) => {
-  Caman('#canvas', img, function() {
+revertBtn.addEventListener('click', e => {
+  Caman('#canvas', img, function () {
     this.revert();
   });
 });
 
 // Upload File
-uploadFile.addEventListener('change', (e) => {
+uploadFile.addEventListener('change', e => {
   // Get File
   const file = document.getElementById('upload-file').files[0];
 
@@ -109,7 +109,7 @@ uploadFile.addEventListener('change', (e) => {
         // Set src
         img.src = reader.result;
         // On image load, add to canvas
-        img.onload = function() {
+        img.onload = function () {
           canvas.width = img.width;
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0, img.width, img.height);
@@ -122,7 +122,7 @@ uploadFile.addEventListener('change', (e) => {
 });
 
 // Download Event
-downloadBtn.addEventListener('click', (e) => {
+downloadBtn.addEventListener('click', e => {
   // Get file ext
   const fileExtension = fileName.slice(-4);
 
